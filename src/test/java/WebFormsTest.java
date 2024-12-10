@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -21,10 +22,7 @@ public class WebFormsTest {
         WebElement option = button.findElement(By.xpath("//option[@value='python']"));
         option.click();
         button.click();
-
-        if (option.isSelected()){
-            System.out.println("Python");
-        }
+        Assert.assertTrue(option.isSelected());
 
 
         List<WebElement> checkbox= driver.findElements(By.xpath("//div[@id='checkboxes']//label//input"));
@@ -37,8 +35,7 @@ public class WebFormsTest {
         RadioButton.click();
 
         WebElement select= driver.findElement(By.xpath("//select[@id='fruit-selects']//option[@value='orange']"));
-        if (!select.isEnabled())
-            System.out.println("Disabled");
+        Assert.assertFalse(select.isEnabled());
         driver.close();
 
     }

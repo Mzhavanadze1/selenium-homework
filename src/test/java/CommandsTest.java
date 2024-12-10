@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -17,15 +18,11 @@ public class CommandsTest {
     WebElement button = driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/form[2]/button"));
     button.click();
     String message = driver.findElement(By.id("message")).getText();
+    Assert.assertTrue(message.equals("It's enabled!"));
 
-
-    if (message.equals("It's enabled!")){
-        System.out.println(message);
-    }
    String buttonmess = button.getText();
-    if (buttonmess.equals("Disable")){
-        System.out.println(buttonmess);
-    }
+   Assert.assertTrue(buttonmess.equals("Disable"));
+
     WebElement veli = driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/form[2]/input"));
     veli.sendKeys("Bootcamp");
     veli.clear();
@@ -35,10 +32,7 @@ public class CommandsTest {
     int Y1 =otxkutxedi1.getSize().getHeight();
     WebElement otxkutxedi2 = driver.findElement(By.id("column-b"));
     int Y2 = otxkutxedi2.getSize().getHeight();
-
-    if (Y1==Y2){
-        System.out.println("Y = " + Y1);
-    }
+    Assert.assertTrue(Y1==Y2);
     driver.close();
 
 

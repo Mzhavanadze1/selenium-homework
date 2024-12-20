@@ -1,26 +1,30 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import Drivers.Driver;
+import Steps.TextBoxSteps;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+public class Task3 extends Driver {
 
-public class Task3 {
+    @BeforeMethod
+    public void setUp() {
+        driver = SetUpDriver();
+    }
+
     @Test
-    public static void Task3() throws InterruptedException {
-        System.setProperty("web driver.chrome.driver", "src/main/resources/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://demoqa.com/text-box");
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement element = driver.findElement(By.id("submit"));
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-        Thread.sleep(3000);
-        Assert.assertTrue(element.isDisplayed());
-        Assert.assertTrue(element.isEnabled());
-        driver.close();
+    public void Task3() throws InterruptedException {
+        TextBoxSteps textBoxSteps = new TextBoxSteps();
+        textBoxSteps.setUp(driver);
+        textBoxSteps.openLink();
+        textBoxSteps.scrollToBtn();
+        Assert.assertTrue(textBoxSteps.submitBtn.isDisplayed());
+        Assert.assertTrue(textBoxSteps.submitBtn.isEnabled());
+
+    }
+
+    @AfterMethod
+    public void driverClose() {
+        closeDriver();
     }
 }

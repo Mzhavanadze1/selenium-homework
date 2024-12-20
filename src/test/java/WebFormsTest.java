@@ -1,43 +1,33 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import Drivers.Driver;
+import Steps.WebdriverPageSteps;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+public class WebFormsTest extends Driver {
 
-public class WebFormsTest {
+    @BeforeMethod
+    public void setUp() {
+        driver = SetUpDriver();
+
+    }
+
     @Test
-    public static void OpenChrome(){
-        System.setProperty("web driver.chrome.driver","src/main/resources/chromedriver");
-        WebDriver driver=new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
-
-        WebElement button =driver.findElement(By.xpath("//select[@id='dropdowm-menu-1']"));
-        button.click();
-
-        WebElement option = button.findElement(By.xpath("//option[@value='python']"));
-        option.click();
-        button.click();
-        Assert.assertTrue(option.isSelected());
+    public void OpenChrome() {
+        WebdriverPageSteps webdriverPageSteps = new WebdriverPageSteps();
+        webdriverPageSteps.setUp(driver);
+        webdriverPageSteps.openLink();
+        Assert.assertTrue(webdriverPageSteps.checkDropdown());
+        webdriverPageSteps.clickCheckBoxes();
+        Assert.assertFalse(webdriverPageSteps.clickSelect());
 
 
-        List<WebElement> checkbox= driver.findElements(By.xpath("//div[@id='checkboxes']//label//input"));
-        for (WebElement element:checkbox){
-            if (!element.isSelected()) {
-                element.click();
-            }
-        }
-        WebElement RadioButton= driver.findElement(By.xpath("//form[@id='radio-buttons']//input[@value='yellow']"));
-        RadioButton.click();
+    }
 
-        WebElement select= driver.findElement(By.xpath("//select[@id='fruit-selects']//option[@value='orange']"));
-        Assert.assertFalse(select.isEnabled());
-        driver.close();
-
+    @AfterMethod
+    public void driverClose() {
+        closeDriver();
     }
 
 }

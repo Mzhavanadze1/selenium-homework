@@ -5,50 +5,69 @@
     <test name="Commands test">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="CommandsTest"/>
+            <class name="SeleniumTests.CommandsTest"/>
         </classes>
     </test> <!-- Test -->
 
-    <test name="Day4">
+    <test name="SeleniumTests.Day4">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Day4"/>
+            <class name="SeleniumTests.Day4"/>
         </classes>
     </test> <!-- Test -->
 
-    <test name="Task2">
+    <test name="SeleniumTests.Task2">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Task2"/>
+            <class name="SeleniumTests.Task2"/>
         </classes>
     </test> <!-- Test -->
 
-    <test name="Task3">
+    <test name="SeleniumTests.Task3">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Task3"/>
+            <class name="SeleniumTests.Task3"/>
         </classes>
     </test> <!-- Test -->
-    <test name="Task4">
+    <test name="SeleniumTests.Task4">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="Task4"/>
-        </classes>
-    </test> <!-- Test -->
-
-    <test name="WaitsTest">
-        <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name="WaitsTest"/>
+            <class name="SeleniumTests.Task4"/>
         </classes>
     </test> <!-- Test -->
 
-    <test name="WebFormsTest">
+    <test name="SeleniumTests.WaitsTest">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="WebFormsTest"/>
+            <class name="SeleniumTests.WaitsTest"/>
         </classes>
     </test> <!-- Test -->
 
+    <test name="SeleniumTests.WebFormsTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SeleniumTests.WebFormsTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="SelenideTests.FirstSelenideTests">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SelenideTests.FirstSelenideTests"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="SelenideTests.GoogleSerchTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SelenideTests.GoogleSerchTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="SelenideTests.ToolTipsTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SelenideTests.ToolTipsTest"/>
+        </classes>
+    </test> <!-- Test -->
 
 </suite> <!-- Suite -->

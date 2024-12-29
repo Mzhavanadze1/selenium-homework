@@ -69,5 +69,29 @@
             <class name="SelenideTests.ToolTipsTest"/>
         </classes>
     </test> <!-- Test -->
+    <test name="SelenideTests.DynamicContenTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SelenideTests.DynamicContenTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="SelenideTests.FloatingMenuTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SelenideTests.FloatingMenuTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="SelenideTests.SortableTableTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SelenideTests.SortableTableTest"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="SelenideTests.ToDoListTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="SelenideTests.ToDoListTest"/>
+        </classes>
+    </test> <!-- Test -->
 
 </suite> <!-- Suite -->

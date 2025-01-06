@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <test name="Commands test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="CommandsTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Day4">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Day4"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Task2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Task2"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Task3">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Task3"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Task4">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="Task4"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="WaitsTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="WaitsTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="WebFormsTest">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="WebFormsTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+
+</suite> <!-- Suite -->
